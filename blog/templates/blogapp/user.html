@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}User{% endblock %}
+
+{% block 'main' %}
+
+<div class="row p-3 ">
+    <form action="" method="post">   
+    {% csrf_token %}         
+    <div class="col-9">
+      <table class="table mt-2 table-borderless">
+        <tbody>
+          <tr>
+            <td>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="input1" class="col-form-label">Username :</label>
+                </div> &nbsp;  &nbsp;  &nbsp;
+                <div class="col-auto">
+                  <input type="text" name="uname" id="" value="{{user.username}}">
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="input2" class="col-form-label"> Email : </label>
+                </div> &nbsp;  &nbsp;  &nbsp;
+                <div class="col-auto">
+                  <input type="email" name="uemail" id="" value="{{user.email}}">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="input3" class="col-form-label">First Name :</label>
+                </div> &nbsp;  &nbsp;  &nbsp;
+                <div class="col-auto">
+                  <input type="text" name="ufname" id="" value="{{user.first_name}}">
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="input4" class="col-form-label">Last Name :</label>
+                </div> &nbsp;  &nbsp;  &nbsp;
+                <div class="col-auto">
+                  <input type="text" name="ulname" id="" value="{{user.last_name}}">
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-3">
+        <div class="col-auto mt-2">
+            <button type="submit" class="btn btn-primary mb-3">Update Profile</button>
+        </div>
+    </div>
+
+    </form>
+<hr>
+    <div class="row">
+        {% for x in data %}
+  
+  <div class="col-8"> 
+        <div class="card my-2">
+          <div class="card-header">
+            <strong>{{x.title}}</strong> &nbsp;&nbsp;&nbsp;
+            <a href="/edit?b={{x.id}}"><i class="bi bi-pen">edit</i></a>
+          </div>
+          <div class="card-body">
+          <blockquote class="blockquote mb-0 h-20">
+           <p>{{x.blog}}</p>
+          <footer class="blockquote-footer">{{x.uid}}</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+    </div>
+</div>
+
+
+{% endblock 'main' %}

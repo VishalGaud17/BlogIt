@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+<div class="row my-3">
+{% for x in data %}
+  <div class="col-8"> 
+    <div class="card my-2">
+      <div class="card-header">
+        <strong>{{x.uid}}</strong> &nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0 h-20">
+          <h4>{{x.title}}</h4>
+          <p>{{x.blog}}</p>
+          <!-- <footer class="blockquote-footer">{{x.uid}}</footer> -->
+        </blockquote>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+
+      <!-- Edit -->
+      <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Write Post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">POST</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- Edit -->
+
+
+
+{% endblock 'main' %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+<div class="row my-4 ">
+    <div class="col-1"></div>
+    <div class="col-10">
+    <form action="" method="post">
+    {% csrf_token %}
+        <div class="mb-3">
+            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" name="title" placeholder="Title">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="15"  placeholder="Tell your Story . . . . . . "></textarea>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-danger">close</button>
+            <input type="submit" value="POST" class="btn btn-success">
+        </div>
+    </form>
+      
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+{% endblock 'main' %}
